@@ -25,7 +25,7 @@ export default Ember.Component.extend({
     return targetAttachment === 'center' || targetAttachment === 'middle center';
   }),
 
-  didGetPositioned: observer('isPositioned', on('didInsertElement', function() {
+  didGetPositioned: observer('isPositioned', on('willUpdate', function() {
     if (this._state !== 'inDOM') {
       return;
     }
